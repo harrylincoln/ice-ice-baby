@@ -1,7 +1,10 @@
+const cors = require('cors');
+
 module.exports = (app) => {
 
-  app.get('/api/signin', (req, res) => {
-      res.json({ message: 'hooray! welcome to our api!' });
+  app.post('/api/signin', cors(), (req, res) => {
+    console.log('req --->', req.body);
+      res.json({ message: 'signed in', token: 'someToken' });
   });
 
   app.post('/api/updateLocation', (req, res) => {
