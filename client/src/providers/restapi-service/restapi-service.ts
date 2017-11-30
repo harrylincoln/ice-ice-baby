@@ -11,10 +11,30 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestapiServiceProvider {
   apiUrl = 'https://jsonplaceholder.typicode.com';
+
   constructor(public http: HttpClient) {
     console.log('Hello RestapiServiceProvider Provider');
-    this.getPosts();
   }
+
+  signIn(body) {
+    return new Promise(resolve => {
+      this.http.post('http://localhost:5000/api/signin', body).subscribe(data => {
+        resolve(data);
+      });
+    });
+  }
+
+  // this.http.post('http://localhost:5000/api/signIn', body)
+  //   .subscribe(
+  //     response => {
+  //       localStorage.setItem('id_token', response.json().id_token);
+  //       this.router.navigate(['about']);
+  //     },
+  //     error => {
+  //       alert(error.text());
+  //       console.log(error.text());
+  //     }
+  //   );
 
   getPosts() {
     return new Promise(resolve => {

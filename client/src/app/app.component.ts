@@ -19,11 +19,13 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      restapiService.getPosts()
-      .then(data => {
-        this.users = data;
-        console.log('this.users', this.users);
-      });
+
+      // restapiService.getPosts()
+      // .then(data => {
+      //   this.users = data;
+      //   console.log('this.users', this.users);
+      // });
+      
       // geolocation.getCurrentPosition().then((resp) => {
       //  console.log('resp.coords.latitude', resp.coords.latitude);
       //  console.log('resp.coords.longitude', resp.coords.longitude);
