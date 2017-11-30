@@ -1,0 +1,8 @@
+{
+  "name": "hack",
+  "app_id": "95532753",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
